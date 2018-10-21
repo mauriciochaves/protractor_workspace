@@ -1,0 +1,33 @@
+{
+  "name": "protractor_workspace",
+  "version": "1.0.0",
+  "description": "Projeto para praticas de automação com protractor",
+  "main": "conf.js",
+  "scripts": {
+    "test": "protractor conf.js",
+    "wdu": "webdriver-manager update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mauriciochaves/protractor_workspace.git"
+  },
+  "keywords": [
+    "qa",
+    "protractor",
+    "automation",
+    "test",
+    "javascript"
+  ],
+  "author": "Mauricio Chaves",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mauriciochaves/protractor_workspace/issues"
+  },
+  "homepage": "https://github.com/mauriciochaves/protractor_workspace#readme",
+  "devDependencies": {
+    "jasmine": "^3.2.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.4.1",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  }
+}
