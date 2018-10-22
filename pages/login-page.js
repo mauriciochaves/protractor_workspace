@@ -1,3 +1,6 @@
+//^ = começa com
+//$ = termina com
+//* = contém
 
 class LoginPage {
 
@@ -21,6 +24,11 @@ class LoginPage {
         this.input_email.sendKeys(email);
         this.input_password.sendKeys(pass);
         this.submit.click();
+    }
+
+    create_an_account(email){
+        this.create_email.sendKeys(email);
+        this.create_submit.click();
     }
 
 

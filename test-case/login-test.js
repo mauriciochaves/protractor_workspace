@@ -1,9 +1,4 @@
-
-//^ = começa com
-//$ = termina com
-//* = contém
-
-//email valid: teste_mcsj@test.com
+//email valid: test_mcsj@test.com
 //pass valid: test123
 
 const LoginPage = require('../pages/login-page');
@@ -15,7 +10,7 @@ describe('Dado que acessei a página login', function(){
     const home_page = new HomePage();
 
     beforeEach(function(){
-        browser.get(login_page.path);
+       // browser.get(login_page.path);
     });
 
 
@@ -61,6 +56,30 @@ describe('Dado que acessei a página login', function(){
         login_page.log_in('test_mcsj@test.com','');
         expect(login_page.alert.getText()).toContain('There is 1 error');   
         expect(login_page.error.getText()).toEqual('Password is required.');
+
+    });
+
+    it('quando tento cadastrar um email já cadastrado', function(){
+     
+        home_page.access_sign_in();
+        login_page.create_an_account('test_mcsj@test.com');
+        expect(login_page.error.getText()).toEqual('An account using this email address has already been registered. Please enter a valid password or request a new one.');
+
+    });
+
+    it('quando tento cadastrar um email incorreto', function(){
+     
+        home_page.access_sign_in();
+        login_page.create_an_account('test_mcsj&test.com');
+        expect(login_page.error.getText()).toEqual('Invalid email address.');
+
+    });
+
+    it('quando tento cadastrar sem informar um email', function(){
+     
+        home_page.access_sign_in();
+        login_page.create_an_account('');
+        expect(login_page.error.getText()).toEqual('Invalid email address.');
 
     });
 

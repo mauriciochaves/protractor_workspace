@@ -5,7 +5,7 @@ exports.config = {
     directConnect:true,
     framework: 'jasmine2',
     specs:['test-case/*-test.js'],
-   // baseUrl:'http://automationpractice.com/index.php',
+    baseUrl:'http://automationpractice.com/index.php',
     onPrepare: function(){
         browser.manage().timeouts().implicitlyWait(10000);
         browser.manage().window().maximize();
