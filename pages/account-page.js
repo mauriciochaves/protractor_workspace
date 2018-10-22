@@ -34,6 +34,7 @@ class AccountPage {
     
     //business functions
    
+    
 }
 
 module.exports = AccountPage;

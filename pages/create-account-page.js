@@ -34,6 +34,7 @@ class CreateAnAccountPage {
         this.input_first_name_personal.sendKeys(firstname);
         
     }
+    
     register_click_on(){
         this.register.click();
     }

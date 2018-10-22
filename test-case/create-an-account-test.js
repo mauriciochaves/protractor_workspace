@@ -40,5 +40,4 @@ describe('Dado que acessei a página para criar uma conta', function(){
     });
 
     
-
 });
