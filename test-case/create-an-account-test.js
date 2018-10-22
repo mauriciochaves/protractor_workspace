@@ -14,8 +14,6 @@ describe('Dado que acessei a página para criar uma conta', function(){
     beforeEach(function(){
         browser.get(login_page.path);
         home_page.access_sign_in();
-        
-     
     });
 
     cenario = {

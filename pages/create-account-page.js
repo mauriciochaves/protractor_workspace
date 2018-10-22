@@ -1,7 +1,3 @@
-//^ = começa com
-//$ = termina com
-//* = contém
-
 class CreateAnAccountPage {
 
     constructor(){
