@@ -28,11 +28,26 @@ class CreateAnAccountPage {
         this.input_address_alias = element(by.id('alias'));
         this.register = element(by.id('submitAccount'));
 
+        //alerts
+        this.alert = element(by.css('div[class*=alert-danger]'));
+        this.error = element(by.css('ol'));
     }
 
-    fill_in_required_fields(firstname){
+    fill_in_required_fields(firstname, lastname, password, address, city, state, zipcode, country, mobile_phone, address_alias){
         this.input_first_name_personal.sendKeys(firstname);
+        this.input_last_name_personal.sendKeys(lastname);
+        this.input_password_personal.sendKeys(password);
+        this.input_address.sendKeys(address);
+        this.input_city.sendKeys(city);
+        this.select_country.sendKeys(country);
+       
+        if(country != null || country != ' '){
+            this.select_state.sendKeys(state);
+            this.input_zip_code.sendKeys(zipcode);
+        }
         
+        this.input_mobile_phone.sendKeys(mobile_phone);
+        this.input_address_alias.sendKeys(address_alias);
     }
     
     register_click_on(){

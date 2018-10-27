@@ -10,7 +10,7 @@ describe('Dado que acessei a página login', function(){
     const home_page = new HomePage();
 
     beforeEach(function(){
-       // browser.get(login_page.path);
+        browser.get(login_page.path);
     });
 
 
