@@ -14,6 +14,7 @@ class LoginPage {
         this.recover_password = element(by.css('a[title^=Recover]'));
         this.create_email = element(by.css('input[name=email_create]'));
         this.create_submit = element(by.css('button[name=SubmitCreate]'));
+        this.page_header = element(by.css('.page-heading'));
 
     }
 

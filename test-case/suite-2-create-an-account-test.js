@@ -34,7 +34,7 @@ describe('Dado que acessei a página para criar uma conta', function(){
                  phone_mobile:'81999999999', 
                  address_alias:'Test Address Alias', 
                  email_test_error:'test22_mcsj@teste.com',
-                 email_register: 'test32_mcsj@teste.com'
+                 email_register: 'test36S_mcsj@teste.com'
                 };
 
       it('quando preencho o First Name com caracter especial', function(){
@@ -303,6 +303,8 @@ describe('Dado que acessei a página para criar uma conta', function(){
         create_account.register_click_on();
        
         expect(account_page.text_welcome_my_account.getText()).toContain('Welcome to your account. Here you can manage all of your personal information and orders.'); 
+        home_page.button_sign_out_click_on();
+        expect(login_page.page_header.getText()).toEqual('AUTHENTICATION');
            
       });
 
