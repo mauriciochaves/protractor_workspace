@@ -1,6 +1,3 @@
-//^ = começa com
-//$ = termina com
-//* = contém
 
 class MyWishlistsPage {
 
@@ -11,6 +8,7 @@ class MyWishlistsPage {
         this.button_remove = element(by.css('i[class=icon-remove]'));
         this.grid = element.all(by.css('tr')).last();
         this.title_page = element(by.css('.page-heading'));
+        this.grid_name = element.all(by.css('a[onclick*=WishlistManage]')).first();
         
     }
 

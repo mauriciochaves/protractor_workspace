@@ -4,7 +4,7 @@
 const LoginPage = require('../pages/login-page');
 const HomePage = require('../pages/home-page');
 
-describe('Dado que acessei a página login', function(){
+describe('Since I accessed the login page', function(){
 
     const login_page = new LoginPage();
     const home_page = new HomePage();
@@ -14,7 +14,7 @@ describe('Dado que acessei a página login', function(){
         home_page.access_sign_in();
     });
 
-    it('quando a senha é inválida', function(){
+    it('when the password is invalid', function(){
  
      
      login_page.log_in('test_mcsj@test.com','teste678');
@@ -23,7 +23,7 @@ describe('Dado que acessei a página login', function(){
        
     });
 
-    it('quando o usuário não está cadastrado', function(){
+    it('when the user is not registered', function(){
        
      login_page.log_in('me1@test.io','test123');
      expect(login_page.alert.getText()).toContain('There is 1 error');  
@@ -31,7 +31,7 @@ describe('Dado que acessei a página login', function(){
 
     });
      
-    it('quando o email é incorreto', function(){
+    it('when email is incorrect', function(){
      
      login_page.log_in('test_mcsj&test.com','teste123');
      expect(login_page.alert.getText()).toContain('There is 1 error');  
@@ -39,7 +39,7 @@ describe('Dado que acessei a página login', function(){
 
     });
 
-    it('quando o email é branco', function(){
+    it('when email is white', function(){
        
      login_page.log_in(' ','teste123');
      expect(login_page.alert.getText()).toContain('There is 1 error');  
@@ -47,7 +47,7 @@ describe('Dado que acessei a página login', function(){
 
     });
 
-    it('quando a senha é branco', function(){
+    it('when the password is white', function(){
      
      login_page.log_in('test_mcsj@test.com','');
      expect(login_page.alert.getText()).toContain('There is 1 error');   
@@ -55,26 +55,25 @@ describe('Dado que acessei a página login', function(){
 
     });
 
-    it('quando tento cadastrar um email já cadastrado', function(){
+    it('when I try to register an email already registered', function(){
      
      login_page.create_an_account('test_mcsj@test.com');
      expect(login_page.error.getText()).toEqual('An account using this email address has already been registered. Please enter a valid password or request a new one.');
 
     });
 
-    it('quando tento cadastrar um email incorreto', function(){
+    it('when I try to register an incorrect email', function(){
      
      login_page.create_an_account('test_mcsj&test.com');
      expect(login_page.error.getText()).toEqual('Invalid email address.');
 
     });
 
-    it('quando tento cadastrar sem informar um email', function(){
+    it('when I try to register without informing an email', function(){
         
      login_page.create_an_account('');
      expect(login_page.error.getText()).toEqual('Invalid email address.');
 
     });
-
 
 });

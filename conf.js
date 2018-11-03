@@ -7,7 +7,7 @@ exports.config = {
     specs:['test-case/*-test.js'],
     baseUrl:'http://automationpractice.com/index.php',
     onPrepare: function(){
-        browser.manage().timeouts().implicitlyWait(10000);
+        browser.manage().timeouts().implicitlyWait(20000);
         browser.manage().window().maximize();
         browser.ignoreSynchronization = true;
 
@@ -45,9 +45,9 @@ exports.config = {
     capabilities: {
         'browserName':'chrome',
 
-        // chromeOptions: {
-        //     args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
-        //   }
+        chromeOptions: {
+            args: [ "--headless", "--disable-gpu", "--window-size=800,600" ]
+          }
 
     }
 }

@@ -119,8 +119,13 @@ class HomePage {
         this.button_add_cart_product_four.click();
         this.button_continue_shopping.click();
     }
-    
-    
+
+    button_signout_is_visible(){
+        if(this.button_sign_out.isDisplayed()){
+            this.button_sign_out.click();
+        }
+    }
+
 }
 
 module.exports = HomePage;

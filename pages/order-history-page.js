@@ -1,6 +1,3 @@
-//^ = começa com
-//$ = termina com
-//* = contém
 
 class OrderHistoryPage {
 
