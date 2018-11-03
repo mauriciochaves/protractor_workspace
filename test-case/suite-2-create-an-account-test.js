@@ -33,7 +33,7 @@ describe('Since I accessed the page to create an account', function(){
                  phone_mobile:'81999999999', 
                  address_alias:'Test Address Alias', 
                  email_test_error:'test22_mcsj@teste.com',
-                 email_register: 'test41S_mcsj@teste.com'
+                 email_register: 'test43S_mcsj@teste.com'
                 };
 
       it('when I fill in the First Name with special character', function(){
