@@ -1,0 +1,28 @@
+{
+  "name": "automation_practice_site",
+  "version": "1.0.0",
+  "description": "automação de testes com protractor",
+  "main": "config.js",
+  "scripts": {
+    "test": "protractor config.js",
+    "wdu": "webdriver-manager update"
+  },
+  "keywords": [
+    "QA",
+    "automação",
+    "protractor",
+    "javascript"
+  ],
+  "author": "mauricio. chaves",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^3.3.0",
+    "jasmine-spec-reporter": "^4.2.1",
+    "protractor": "^5.4.1",
+    "protractor-jasmine2-html-reporter": "0.0.7",
+    "webdriver-manager": "^12.1.0"
+  },
+  "dependencies": {
+    "id": "0.0.0"
+  }
+}
