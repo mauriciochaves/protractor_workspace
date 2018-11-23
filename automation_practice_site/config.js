@@ -1,3 +1,5 @@
+var HtmlReporter = require('protractor-beautiful-reporter');
+
 exports.config = {
 
     directConnect:true,
@@ -9,35 +11,34 @@ exports.config = {
         browser.manage().window().maximize();
         browser.ignoreSynchronization = true;
 
-        var JasmineHtmlReporter = require('protractor-jasmine2-html-reporter');
-        jasmine.getEnv().addReporter(new JasmineHtmlReporter({
-            savePath: 'reports',
-            screenshotsFolder:'./shots',
-            takeScreenshots:true,
-            cleanDestination:false,
-            fixedScreenshotName:true
-        }));
+        // Adicione um repórter de screenshots em reports/docs
+        jasmine.getEnv().addReporter(new HtmlReporter({
+        baseDirectory: 'reports/docs',
+        // screenshotsSubfolder: 'screenshots', //armazenar todas as imagens
+        // jsonsSubfolder: 'jsons', //armazenar todos os JSONs
+        // excludeSkippedSpecs : true, //excluir totalmente os casos de teste ignorados.
+        // takeScreenShotsForSkippedSpecs : false,  //Você pode definir se deseja que as capturas de tela dos relatórios sejam ignoradas
+        // takeScreenShotsOnlyForFailedSpecs : false, //definir se deseja capturar capturas de tela somente de casos de teste com falha
+        // docTitle : ' Automation Practice Site ',
+        // docName : ' relatorio_de_cts.html ',
+        //cssOverrideFile : ' css / style.css ', //alterar o css usada para o relatório html gerado
+        // clientDefaults : {
+        //     searchSettings : {
+        //         allselected : true , 
+        //         passou : true , 
+        //         falhou : true , 
+        //         pendente : true , 
+        //         withLog : true 
+        //     },
+        //     columnSettings : {
+        //         displaytime : true ,
+        //         displayBrowser : true ,
+        //         displaySessionId : true ,
+        //         inlineScreenshots : true
+        //     }
+        // }
 
-        var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-        jasmine .getEnv().addReporter(new SpecReporter({
-            spec:{
-       //      displayStacktrace: true,
-       //     displayErrorMessages: true,
-            displayFailed: true
-       //      displayDuration: true
-                },
-            summary:{
-             displayErrorMessages:true,
-       //      displayStacktrace: true,
-             displaySuccessful:true,
-             displayFailed:true
-       //      displayDuration:true
-            },
-            colors:{
-             enabled:true
-            }
-        }));
-
+        }).getJasmine2Reporter());
     },
 
     capabilities: {
